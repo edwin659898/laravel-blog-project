@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\User;
 use App\Models\Post;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Cache;
@@ -21,7 +22,8 @@ class PostController extends Controller
         return view(
             'posts.index',
             [
-                'categories' => $categories
+                'categories' => $categories,
+                'posts' => Post::take(9)->get(),
             ]
         );
     }

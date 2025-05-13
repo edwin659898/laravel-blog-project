@@ -1,7 +1,8 @@
 <nav class="flex items-center justify-between px-6 py-3 border-b border-gray-100">
     <div id="nav-left" class="flex items-center">
         <a href="{{ route('home') }}">
-            <x-application-mark />
+            {{-- <x-application-mark /> --}}
+            <img src="images/logo.png" alt="BGF" height="50" width="50">
         </a>
         <div class="ml-10 top-menu">
             <div class="flex space-x-4">
@@ -11,6 +12,7 @@
                 <x-nav-link href="{{ route('posts.index') }}" :active="request()->routeIs('posts.index')">
                     {{ __('menu.blog') }}
                 </x-nav-link>
+                <a href="https://betterglobeforestry.com" target="_blank">Our Website </a>
             </div>
         </div>
     </div>

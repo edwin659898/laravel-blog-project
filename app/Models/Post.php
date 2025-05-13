@@ -95,4 +95,6 @@ class Post extends Model
 
         return ($isUrl) ? $this->image : Storage::disk('public')->url($this->image);
     }
+
+
 }

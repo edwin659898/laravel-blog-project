@@ -24,8 +24,9 @@ class HomeController extends Controller
         });
 
         return view('home', [
-            'featuredPosts' => $featuredPosts,
-            'latestPosts' => $latestPosts
+            // 'featuredPosts' => $featuredPosts,
+            'featuredPosts' => Post::where('published_at', '<=', Carbon::now())->where('featured', true)->latest('published_at')->take(3)->get(),
+            'latestPosts' => Post::take(9)->get(),
         ]);
     }
 }

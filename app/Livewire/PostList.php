@@ -59,7 +59,14 @@ class PostList extends Component
             ->search($this->search)
             ->orderBy('published_at', $this->sort)
             ->paginate(3);
-    }
+
+            // ->orderBy('published_at', $this->sort)
+            // ->when(Category::where('slug', $this->category)->first(), function ($query){
+            //     $query->withCategory($this->category);
+            // })
+            // ->where('title', 'like', "%{$this->search}%")
+            // ->paginate(3);
+    } 
 
     #[Computed()]
     public function activeCategory()
